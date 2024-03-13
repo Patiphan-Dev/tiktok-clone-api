@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\UserController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::get('/get-random-users', [GlobalController::class, 'getRandomUsers']);
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -40,5 +40,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('/likes', [LikeController::class, 'store']);
     Route::delete('/likes/{id}', [LikeController::class, 'destroy']);
-
 });

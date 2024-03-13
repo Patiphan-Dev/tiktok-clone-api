@@ -34,6 +34,7 @@ class UserController extends Controller
         }
 
         try {
+            $user = new User;
             $user = (new FileService)->updateImage(auth()->user(), $request);
             $user->save();
 
